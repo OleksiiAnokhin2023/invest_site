@@ -1,0 +1,166 @@
+/* ====== ОСНОВНЫЕ СТИЛИ ====== */
+body {
+    background-color: #3c3c3c;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ====== ШАПКА ====== */
+header {
+    background-color: #282828;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #3c3c3c;
+    border-radius: 10px;
+}
+
+/* ====== ОСНОВНОЙ БЛОК ====== */
+.second_layer {
+    background-color: #c7c7c7;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-sizing: border-box;
+    display: block;
+    overflow-x: hidden;
+}
+.second_layer::-webkit-scrollbar {
+    display: none;
+}
+
+/* ====== ГАЛЕРЕЯ ====== */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+.gallery__item {
+    flex: 1 1 calc(33.333% - 10px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.gallery__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+}
+
+/* ====== ИЗОБРАЖЕНИЯ ====== */
+#candlesticks_combinations img, #strategy img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ====== КАРТОЧКИ ====== */
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card img {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+/* ====== СТИЛИ ДЛЯ ТЕКСТА И ССЫЛОК ====== */
+h3 {
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+a {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+a:hover {
+    background: #0056b3;
+}
+
+/* ====== СТИЛИЗАЦИЯ ТАБЛИЦ ====== */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.styled-table thead tr {
+    background-color: #007bff;
+    color: white;
+}
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* ====== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ====== */
+@media (max-width: 768px) {
+    header {
+        font-size: 18px;
+        padding: 8px;
+    }
+    .second_layer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+    .gallery__item {
+        flex: 1 1 100%;
+    }
+    .tag img {
+        width: 80px;
+    }
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* ====== АДАПТАЦИЯ ДЛЯ ПЛАНШЕТОВ ====== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .second_layer {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        height: 100%;
+    }
+    .gallery__item {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
